@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import ThemeToggle from '../ThemeToggle';
 
 /* ── Clean SVG line-art icons (no emojis, no AI icons) ── */
 const IconDashboard = () => (
@@ -53,7 +54,7 @@ const Sidebar = () => {
 
   return (
     <aside className="fixed inset-y-0 left-0 w-[240px] flex flex-col z-50"
-      style={{ background: '#0D0D0D' }}>
+      style={{ background: 'var(--theme-sidebar)', borderRight: '1px solid var(--theme-border)', transition: 'background 0.35s ease, border-color 0.35s ease' }}>
 
       {/* Brand */}
       <div className="flex items-center justify-center px-5 py-6">
@@ -70,7 +71,7 @@ const Sidebar = () => {
         </p>
 
         {navItems.map(({ label, path, Icon }) => {
-          const isActive = location.pathname === path;
+          const isActive = location.pathname.startsWith(path);
           return (
             <button key={path}
               onClick={() => navigate(path)}
@@ -80,11 +81,23 @@ const Sidebar = () => {
             </button>
           );
         })}
+
+        <div className="sidebar-divider my-3" />
+
+        <div className="nav-item flex items-center justify-between" style={{ cursor: 'default' }}>
+          <div className="flex items-center gap-2.5">
+            <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <span>Theme</span>
+          </div>
+          <ThemeToggle />
+        </div>
       </nav>
 
       {/* Footer */}
       <div className="px-3 pb-5">
-        <div className="sidebar-divider mb-4" />
+        <div className="sidebar-divider mb-3" />
         <div className="flex items-center justify-between gap-2 px-1">
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="w-8 h-8 rounded-full avatar-admin flex items-center justify-center text-[12px] font-bold text-white shrink-0">
@@ -92,10 +105,10 @@ const Sidebar = () => {
             </div>
             <div className="min-w-0">
               <p className="text-[13px] font-semibold truncate max-w-[110px]"
-                style={{ color: '#E5E2E1', fontFamily: 'Inter, sans-serif' }}>
+                style={{ color: 'var(--theme-text-secondary)', fontFamily: 'Inter, sans-serif' }}>
                 {user?.name}
               </p>
-              <p className="text-[11px]" style={{ color: '#4B5563' }}>Admin</p>
+              <p className="text-[11px]" style={{ color: 'var(--theme-text-muted)' }}>Admin</p>
             </div>
           </div>
 

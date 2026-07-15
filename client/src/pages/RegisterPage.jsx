@@ -32,7 +32,8 @@ const RegisterPage = () => {
   return (
     <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[480px_1fr]">
       {/* ── Left: Form panel ── */}
-      <div className="relative flex flex-col justify-center px-14 py-16 bg-bg-card border-r border-border overflow-hidden sidebar-glow animate-fade-in">
+      <div className="relative flex flex-col justify-center px-14 py-16 border-r overflow-hidden sidebar-glow animate-fade-in"
+        style={{ background: 'var(--theme-card)', borderColor: 'var(--theme-border)', transition: 'background 0.35s ease, border-color 0.35s ease' }}>
         <div className="mb-6 relative z-10 animate-fade-slide" style={{ filter: 'drop-shadow(0 4px 16px rgba(59,130,246,0.3))', animationDelay: '0.1s', animationFillMode: 'both' }}>
           <Logo id="reg-grad" />
         </div>
@@ -85,7 +86,7 @@ const RegisterPage = () => {
 
       {/* ── Right: Visual panel ── */}
       <div className="hidden lg:flex flex-col items-center justify-center relative overflow-hidden p-16 animate-fade-in min-h-screen"
-        style={{ background: 'linear-gradient(140deg, #050505 0%, #111111 50%, #000000 100%)', animationDelay: '0.1s', animationFillMode: 'both' }}>
+        style={{ background: 'linear-gradient(140deg, var(--theme-gradient-start) 0%, var(--theme-gradient-mid) 50%, var(--theme-gradient-end) 100%)', animationDelay: '0.1s', animationFillMode: 'both', transition: 'background 0.35s ease' }}>
         
         {/* Top Right Info Icon */}
         <div className="absolute top-12 right-12 group z-50">

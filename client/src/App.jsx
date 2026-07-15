@@ -1,7 +1,7 @@
-﻿import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
+import OnboardingWizard from './pages/OnboardingWizard';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import SubmissionsPage from './pages/admin/SubmissionsPage';
 import TalentDashboard from './pages/talent/TalentDashboard';
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/register" element={<OnboardingWizard />} />
           <Route
             path="/admin/dashboard"
             element={
@@ -52,6 +52,22 @@ function App() {
             element={
               <PrivateRoute role="Admin">
                 <SubmissionsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/talent/tasks"
+            element={
+              <PrivateRoute role="Talent">
+                <TalentDashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/talents"
+            element={
+              <PrivateRoute role="Admin">
+                <AdminDashboard />
               </PrivateRoute>
             }
           />

@@ -63,7 +63,7 @@ const AdminDashboard = () => {
   });
 
   return (
-    <div className="flex min-h-screen" style={{ background: '#050505' }}>
+    <div className="flex min-h-screen" style={{ background: 'var(--theme-bg)', transition: 'background 0.35s ease' }}>
       <Sidebar />
 
       <main className="ml-[240px] flex-1 px-8 py-8" style={{ maxWidth: 'calc(100vw - 240px)' }}>
@@ -72,10 +72,10 @@ const AdminDashboard = () => {
         <div className="flex items-center justify-between mb-7 page-section">
           <div>
             <h1 className="font-display text-[22px] font-semibold tracking-tight"
-              style={{ color: '#F0F0F0', fontFamily: 'Poppins, sans-serif' }}>
+              style={{ color: 'var(--theme-text)', fontFamily: 'Poppins, sans-serif' }}>
               Task Management
             </h1>
-            <p className="mt-0.5 text-[13px]" style={{ color: '#6B7280' }}>
+            <p className="mt-0.5 text-[13px]" style={{ color: 'var(--theme-text-muted)' }}>
               Create, assign, and track all tasks across your talent pool.
             </p>
           </div>
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
           {statCards.map(({ label, value, colorClass, valueColor }) => (
             <div key={label} className={`stat-card ${colorClass}`}>
               <span className="block text-[10.5px] font-semibold uppercase tracking-[0.08em] mb-3"
-                style={{ color: '#4B5563', fontFamily: 'Inter, sans-serif' }}>
+                style={{ color: 'var(--theme-text-muted)', fontFamily: 'Inter, sans-serif' }}>
                 {label}
               </span>
               <span className="block text-[32px] font-bold leading-none"
