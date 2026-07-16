@@ -47,7 +47,7 @@ const AdminDashboard = () => {
   };
 
   const statCards = [
-    { label: 'Total Tasks', value: stats.total,     colorClass: 'stat-card-default', valueColor: '#E5E2E1' },
+    { label: 'Total Tasks', value: stats.total,     colorClass: 'stat-card-default', valueColor: 'var(--theme-text)' },
     { label: 'Open',        value: stats.open,      colorClass: 'stat-card-blue',    valueColor: '#60A5FA' },
     { label: 'Submitted',   value: stats.submitted, colorClass: 'stat-card-info',    valueColor: '#60A5FA' },
     { label: 'Approved',    value: stats.approved,  colorClass: 'stat-card-green',   valueColor: '#34D399' },
@@ -110,14 +110,14 @@ const AdminDashboard = () => {
           <div className="table-header-bar">
             <div className="flex items-center gap-2">
               <h2 className="text-[15px] font-semibold"
-                style={{ color: '#E5E2E1', fontFamily: 'Poppins, sans-serif' }}>
+                style={{ color: 'var(--theme-text)', fontFamily: 'Poppins, sans-serif' }}>
                 All Tasks
               </h2>
               <span className="text-[11px] px-2 py-0.5 rounded-full"
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  color: '#6B7280',
-                  border: '1px solid rgba(255,255,255,0.09)',
+                  background: 'var(--theme-badge-open-bg)',
+                  color: 'var(--theme-text-muted)',
+                  border: '1px solid var(--theme-border)',
                   fontFamily: 'Inter, sans-serif',
                 }}>
                 {filteredTasks.length} {filteredTasks.length === 1 ? 'task' : 'tasks'}

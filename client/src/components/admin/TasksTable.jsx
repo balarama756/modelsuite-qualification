@@ -87,11 +87,11 @@ const TasksTable = ({ tasks, onEdit, onRefresh }) => {
               {/* Title + description */}
               <td className="table-td" style={{ maxWidth: '260px' }}>
                 <span className="block font-semibold truncate"
-                  style={{ color: '#E5E2E1', fontFamily: 'Inter, sans-serif', marginBottom: '2px' }}>
+                  style={{ color: 'var(--theme-text)', fontFamily: 'Inter, sans-serif', marginBottom: '2px' }}>
                   {task.title || '—'}
                 </span>
                 {task.description && (
-                  <span className="block truncate" style={{ color: '#4B5563', fontSize: '12px', maxWidth: '240px' }}>
+                  <span className="block truncate" style={{ color: 'var(--theme-text-muted)', fontSize: '12px', maxWidth: '240px' }}>
                     {task.description}
                   </span>
                 )}
@@ -118,20 +118,20 @@ const TasksTable = ({ tasks, onEdit, onRefresh }) => {
                       }}>
                       {task.assignedTo.name?.[0]?.toUpperCase()}
                     </div>
-                    <span style={{ color: '#E5E2E1' }}>{task.assignedTo.name}</span>
+                    <span style={{ color: 'var(--theme-text)' }}>{task.assignedTo.name}</span>
                   </div>
                 ) : (
-                  <span style={{ color: '#4B5563', fontSize: '13px' }}>Unassigned</span>
+                  <span style={{ color: 'var(--theme-text-muted)', fontSize: '13px' }}>Unassigned</span>
                 )}
               </td>
 
               {/* Due date */}
-              <td className="table-td" style={{ color: '#6B7280', whiteSpace: 'nowrap' }}>
+              <td className="table-td" style={{ color: 'var(--theme-text-muted)', whiteSpace: 'nowrap' }}>
                 {fmtDate(task.dueDate)}
               </td>
 
               {/* Created */}
-              <td className="table-td" style={{ color: '#4B5563', whiteSpace: 'nowrap', fontSize: '12.5px' }}>
+              <td className="table-td" style={{ color: 'var(--theme-text-faint)', whiteSpace: 'nowrap', fontSize: '12.5px' }}>
                 {fmtDate(task.createdAt)}
               </td>
 

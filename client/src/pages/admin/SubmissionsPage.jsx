@@ -209,7 +209,7 @@ const SubmissionsPage = () => {
                   className="sub-search-input"
                 />
               </div>
-              <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', color: 'rgba(255,255,255,0.25)' }}>
+              <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', color: 'var(--theme-text-faint)' }}>
                 {filtered.length} submission{filtered.length !== 1 ? 's' : ''}
               </span>
             </div>
@@ -217,7 +217,7 @@ const SubmissionsPage = () => {
             <div className="split-left-list">
               {filtered.length === 0 ? (
                 <div style={{ padding: '40px 20px', textAlign: 'center' }}>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.25)' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'var(--theme-text-faint)' }}>
                     No submissions match your filters.
                   </p>
                 </div>
@@ -295,7 +295,7 @@ const SubmissionsPage = () => {
                   <div className="detail-section">
                     <p className="detail-section-label">Task Description</p>
                     <div className="detail-section-content">
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#9CA3AF', lineHeight: '1.6', margin: 0 }}>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'var(--theme-text-secondary)', lineHeight: '1.6', margin: 0 }}>
                         {selected.taskId.description}
                       </p>
                     </div>
@@ -307,12 +307,12 @@ const SubmissionsPage = () => {
                   <p className="detail-section-label">Submission Notes</p>
                   {selected.notes ? (
                     <div className="detail-section-content">
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13.5px', color: '#D1D5DB', lineHeight: '1.6', margin: 0, whiteSpace: 'pre-wrap' }}>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13.5px', color: 'var(--theme-text-secondary)', lineHeight: '1.6', margin: 0, whiteSpace: 'pre-wrap' }}>
                         {selected.notes}
                       </p>
                     </div>
                   ) : (
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.2)', fontStyle: 'italic', margin: 0 }}>
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'var(--theme-text-faint)', fontStyle: 'italic', margin: 0 }}>
                       No notes provided.
                     </p>
                   )}
@@ -330,7 +330,7 @@ const SubmissionsPage = () => {
                       <IconExternalLink />
                     </a>
                   ) : (
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.2)', fontStyle: 'italic', margin: 0 }}>
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: 'var(--theme-text-faint)', fontStyle: 'italic', margin: 0 }}>
                       No file attached.
                     </p>
                   )}
