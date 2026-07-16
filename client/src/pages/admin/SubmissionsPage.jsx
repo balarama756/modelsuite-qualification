@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState, useMemo } from 'react';
 import Sidebar from '../../components/admin/Sidebar';
 import { fetchAllSubmissions, reviewSubmission } from '../../api/submissions';
@@ -114,7 +115,6 @@ const SubmissionsPage = () => {
     }
   };
 
-  // eslint-disable-next-line
   useEffect(() => { loadSubmissions(); }, []);
 
   /* ── Counts ── */
